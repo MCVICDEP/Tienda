@@ -20,14 +20,16 @@ namespace Tienda.Modelo
 
         }
 
-        public virtual DbSet<Producto> Producto { get; set; }
-        public virtual DbSet<Carrito> Carrito { get; set; }
-        public virtual DbSet<CarritoItem> Carrito_Item { get; set; }
-        public virtual DbSet<Categoria> Categoria { get; set; }
-        public virtual DbSet<DetalleOrdenCliente> DetalleOrdenCliente { get; set; }
-        public virtual DbSet<OrdenCliente> OrdenCliente { get; set; }
-        public virtual DbSet<TipoUsuario> TipoUsuario { get; set; }
-        public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<Producto> Producto { get; set; } //LISTO
+        public virtual DbSet<Carrito> Carrito { get; set; } //LISTO
+        public virtual DbSet<CarritoItem> CarritoItem { get; set; } //LISTO
+        public virtual DbSet<Categoria> Categoria { get; set; } //LISTO
+        public virtual DbSet<DetalleOrdenCliente> DetalleOrdenCliente { get; set; } //LISTO
+        public virtual DbSet<OrdenCliente> OrdenCliente { get; set; }//LISTO
+        public virtual DbSet<TipoUsuario> TipoUsuario { get; set; } //LISTO
+        public virtual DbSet<Usuario> Usuario { get; set; } //LISTO
+        public virtual DbSet<ListaDeseos> ListaDeseos { get; set; } //LISTO
+        public virtual DbSet<ListaDeseosItems> ListaDeseosItems { get; set; } //LISTO
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

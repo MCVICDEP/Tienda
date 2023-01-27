@@ -7,6 +7,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Tienda.Modelo;
 using Pomelo.EntityFrameworkCore;
+using Tienda.Servicios;
+using Tienda.Interfaces;
+
 namespace Tienda
 {
     public class Startup
@@ -16,6 +19,7 @@ namespace Tienda
             Configuration = configuration;
         }
 
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -23,6 +27,18 @@ namespace Tienda
         {
             var connectionString = "Server=localhost;Database=TiendaVirtual;Uid=root;Pwd=Dcg142356!";
             services.AddDbContext<ContextoProductoDB>(options => options.UseMySQL(connectionString));
+
+            services.AddTransient<InterfazProducto, ProductoData>();
+            services.AddTransient<InterfazUsuario, UsuarioData>();
+            services.AddTransient<InterfazCarrito, CarritoData>();
+            services.AddTransient<InterfazCategoria, CategoriaData>();
+            services.AddTransient<InterfazCarritoItem, CarritoItemData>();
+            services.AddTransient<InterfazDetalleOrdenCliente, DetalleOrdenClienteData>();
+            services.AddTransient<InterfazListaDeseos, ListaDeseosData>();
+            services.AddTransient<InterfazListaDeseosItems, ListaDeseosItemsData>();
+            services.AddTransient<InterfazProducto, ProductoData>();
+            services.AddTransient<InterfazUsuario, UsuarioData>();
+
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

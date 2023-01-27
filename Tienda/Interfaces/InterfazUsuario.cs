@@ -6,13 +6,14 @@ using Tienda.Modelo;
 
 namespace Tienda.Interfaces
 {
-    public class InterfazUsuario
+    interface InterfazUsuario
     {
         List<Usuario> GetAllUsuarios();
-        int AñadirProducto(Producto producto);
-        int UpdateProducto(Producto producto);
-        Producto GetProductoData(int idproducto);
-        string DeleteProducto(int idproducto);
-        List<Categoria> GetCategorias();
+        int Addusuario(Usuario usuario);
+        int UpdateUsuario(Usuario usuario);
+        Usuario GetUsuarioData(int idusuario);
+        string DeleteUsuario(int idusuario);
+        List<TipoUsuario> GetTipoUsuario();
+
     }
 }

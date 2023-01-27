@@ -9,7 +9,6 @@ namespace Tienda.Servicios
     interface InterfazProducto
     {
         List<Producto> GetAllProductos();
-
         int AñadirProducto(Producto producto);
         int UpdateProducto(Producto producto);
         Producto GetProductoData(int idproducto);
